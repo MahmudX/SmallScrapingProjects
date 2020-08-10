@@ -76,11 +76,15 @@ def Scrap(url, driver):
         spec = ", ".join(spec)
     except:
         spec = na
-    single = [ID, name, rating, reviews, desc, spec, overview,
-              price, brand, breadcrumb, producturl]
-    for x in images:
-        single.append(x)
-    return single
+    try:
+        single = [ID, name, rating, reviews, desc, spec, overview,
+                  price, brand, breadcrumb, producturl]
+    
+        for x in images:
+            single.append(x)
+        return single
+    except:
+        return None
 
 
 
