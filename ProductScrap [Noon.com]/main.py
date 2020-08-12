@@ -1,8 +1,8 @@
-from selenium.webdriver import Chrome
+from selenium.webdriver import Firefox
 import csv
 import prodscrapper
 import linkScrapper
-
+from tqdm import tqdm
 
 def main():
 
@@ -26,10 +26,10 @@ def main():
             writer.writerow(prodscrapper.Scrap(x, driver))
     else:
         parentUrl = linkScrapper.GetAllValidProductUrl()
-        for u in parentUrl:
+        for u in tqdm(parentUrl):
             urls = linkScrapper.GetProductLinks(u, 1, 10000000000000000000000)
             driver = Chrome("chromedriver")
-            for x in urls:
+            for x in tqdm(urls):
                 print("Processing:", x)
                 writer.writerow(prodscrapper.Scrap(x, driver))
 

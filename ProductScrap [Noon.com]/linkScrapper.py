@@ -1,9 +1,9 @@
-from selenium.webdriver import Chrome
+from selenium.webdriver import Firefox
 from bs4 import BeautifulSoup
 import csv
 from time import sleep
 import json
-driver = Chrome("chromedriver")
+driver = Firefox()
 allcatlist = ["https://www.noon.com/uae-en/electronics",
               "https://www.noon.com/uae-en/beauty", "https://www.noon.com/uae-en/fashion", "https://www.noon.com/uae-en/home-kitchen", "https://www.noon.com/uae-en/sports-outdoors", "https://www.noon.com/uae-en/toys", "https://www.noon.com/uae-en/baby", "https://www.noon.com/uae-en/grocery", "https://www.noon.com/uae-en/automotive-store", "https://www.noon.com/uae-en/tools-and-home-improvement-store", "https://www.noon.com/uae-en/book-store", "https://www.noon.com/uae-en/pet-store", "https://www.noon.com/uae-en/stationery", "https://www.noon.com/uae-en/music-movies-and-tv-shows-store"]
 

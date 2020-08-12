@@ -1,0 +1,21 @@
+1597254630235	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\MAHMUD~1\\AppData\\Local\\Temp\\rust_mozprofileieTSEo"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597254632338	Marionette	INFO	Listening on port 50868
+1597254632355	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: https://static.zdassets.com/web_widget/latest/chat-sdk.cec40ba63b2a85de0a9c.chunk.js, line 85: TypeError: this.$Loader is undefined
+JavaScript error: https://static.zdassets.com/web_widget/latest/chat-sdk.cec40ba63b2a85de0a9c.chunk.js, line 85: TypeError: this.$Loader is undefined
+JavaScript error: https://static.zdassets.com/web_widget/latest/chat-sdk.cec40ba63b2a85de0a9c.chunk.js, line 85: TypeError: this.$Loader is undefined
+JavaScript error: https://static.zdassets.com/web_widget/latest/chat-sdk.cec40ba63b2a85de0a9c.chunk.js, line 85: TypeError: this.$Loader is undefined
+JavaScript error: chrome://marionette/content/proxy.js, line 222: TypeError: this.browser.driver.dialogObserver is null
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 314: TypeError: state is undefined
+JavaScript error: resource://gre/actors/BrowserElementParent.jsm, line 314: TypeError: state is undefined
+1597254764591	Marionette	INFO	Stopped listening on port 50868
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
