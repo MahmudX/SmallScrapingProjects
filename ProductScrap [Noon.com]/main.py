@@ -14,13 +14,13 @@ def main():
     writer = csv.writer(moviedata_csv_file)
     writer.writerow(header)
     print("To scrap the entire website, type \'all\' below.")
-    url = input("Enter a valid url: ")
+    url = input("Enter a valid listing url: ")
 
     if url != 'all':
         start = int(input("Start index: "))
         end = int(input("Ending index: "))
         urls = linkScrapper.GetProductLinks(url, start, end)
-        driver = Chrome("chromedriver")
+        driver = Firefox()
         for x in urls:
             print("Processing:",x)
             writer.writerow(prodscrapper.Scrap(x, driver))
@@ -28,7 +28,7 @@ def main():
         parentUrl = linkScrapper.GetAllValidProductUrl()
         for u in tqdm(parentUrl):
             urls = linkScrapper.GetProductLinks(u, 1, 10000000000000000000000)
-            driver = Chrome("chromedriver")
+            driver = Firefox()
             for x in tqdm(urls):
                 print("Processing:", x)
                 writer.writerow(prodscrapper.Scrap(x, driver))

@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 from time import sleep
 import json
+from tqdm import tqdm
 driver = Firefox()
 allcatlist = ["https://www.noon.com/uae-en/electronics",
               "https://www.noon.com/uae-en/beauty", "https://www.noon.com/uae-en/fashion", "https://www.noon.com/uae-en/home-kitchen", "https://www.noon.com/uae-en/sports-outdoors", "https://www.noon.com/uae-en/toys", "https://www.noon.com/uae-en/baby", "https://www.noon.com/uae-en/grocery", "https://www.noon.com/uae-en/automotive-store", "https://www.noon.com/uae-en/tools-and-home-improvement-store", "https://www.noon.com/uae-en/book-store", "https://www.noon.com/uae-en/pet-store", "https://www.noon.com/uae-en/stationery", "https://www.noon.com/uae-en/music-movies-and-tv-shows-store"]
@@ -50,7 +51,7 @@ def GetProductLinks(url, start, end):
     driver.get(url)
     Links = []
     prev = ''
-    for x in range(start, end):
+    for x in tqdm(range(start, end)):
         try:
             driver.get(url+'?page='+str(x))
             if driver.current_url == prev:
@@ -63,7 +64,7 @@ def GetProductLinks(url, start, end):
         soup = BeautifulSoup(driver.page_source, "html.parser")
         prodContainer = soup.find_all(
             'div', attrs={'class': 'jsx-3152181095 productContainer'})
-        for x in prodContainer:
+        for x in tqdm(prodContainer):
             link = 'https://www.noon.com'+x.find('a')['href']
             Links.append(link)
     driver.close()
